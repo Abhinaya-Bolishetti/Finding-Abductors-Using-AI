@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-box">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <label for="emailOrMobile">Email / Mobile</label>
+      <input id="emailOrMobile" type="text" required placeholder="Enter Email or Mobile">
+
+      <label for="password">Create Password</label>
+      <input id="password" type="password" required placeholder="Enter Password">
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" type="password" required placeholder="Confirm Password">
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p>Already registered? <a href="common-login.html">Login</a></p>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const emailOrMobile = document.getElementById('emailOrMobile').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      const formData = new URLSearchParams();
+      formData.append('emailOrMobile', emailOrMobile);
+      formData.append('password', password);
+      formData.append('confirmPassword', confirmPassword);
+
+      const res = await fetch('http://localhost:5001/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString()
+      });
+
+      const text = await res.text();
+
+      if (res.ok) {
+        alert('Registration successful!');
+        window.location.href = 'common-login.html';
+      } else {
+        alert(text);
+      }
+    });
+  </script>
+</body>
+</html>
