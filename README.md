@@ -1,54 +1,58 @@
-# Finding-Abductors-Using-AI
-AI-powered web system for identifying missing persons using CNN image recognition.
+# Finding-Abductors-Using-AI 🚨  
+AI-powered web system for identifying missing persons using **CNN image recognition**.  
 
-## 📌 Overview
-This project is a front-end implementation for the **Finding Abductors Using AI** system.  
-It allows different user types – citizens, victim families, and police – to log in, submit reports, and upload suspicious images for AI-based suspect detection.
+## 📌 Overview  
+This project is a **full-stack web portal** for assisting in missing person investigations.  
+It allows **citizens, victim families, and police (admins)** to log in, register cases, upload suspicious images, and leverage **AI-based suspect detection**.  
 
-## 🛠 Features
-- **Multi-user login system** (Common users, Admin/Police, Victim families)
-- **Case registration** with details and photos
-- **Image upload** for AI analysis
-- Responsive and intuitive UI built with HTML, CSS, and JavaScript
-- Backend integration ready via Flask (Python)
+## 🛠 Features  
+- 👤 **Multi-user login system**  
+  - Citizens → Upload suspicious images  
+  - Families → Register missing person cases  
+  - Police/Admin → Verify reports and manage cases  
+- 📝 **Case registration** with personal details & photo upload  
+- 📸 **Image upload** for AI-based CNN recognition  
+- 🎨 **Responsive frontend** with HTML, CSS, JavaScript  
+- ⚡ **Flask backend** integration ready  
+- 🗄 **Database ready** (PostgreSQL/MySQL/SQLite supported)  
 
-## 📂 Project Structure
-```
-📁 Finding-Abductors-Using-AI
-        📁 front
-            📄 admin-login.html
-            📄 ai-theme.png
-            📄 app.py
-            📄 background.png
-            📄 common-login.html
-            📄 common-login.js
-            📄 index.html
-            📄 location.png
-            📄 logo.png
-            📄 main.js
-            📄 missing-person.png
-            📄 register.html
-            📄 register-case.html
-            📄 script.js
-            📄 style.css
-            📄 upload.js
-            📄 upload-image.html
-            📁 .vscode
-                📄 launch.json
-```
+## 🗂 Project Structure  
+Finding-Abductors-Using-AI/
+│── app.py # Flask backend
+│── static/
+│ ├── style.css # Styling
+│ ├── script.js # Frontend scripts
+│ ├── main.js, upload.js # Case & image upload logic
+│── templates/
+│ ├── index.html # Landing page
+│ ├── common-login.html # User login
+│ ├── register.html # User registration
+│ ├── register-case.html # Case registration
+│ ├── upload-image.html # Image upload
+│ ├── admin-login.html # Police login
+│── assets/
+│ ├── logo.png
+│ ├── background.png
+│ ├── ai-theme.png
+│ └── missing-person.png
+│── requirements.txt # Python dependencies
 
-## 🚀 How to Run
-1. Download or clone this repository.
-2. Open `index.html` (or the relevant HTML file) in your browser for frontend testing.
-3. To connect with backend:
-   - Ensure Flask server is running (`python app.py`).
-   - Update API endpoints in JavaScript files if needed.
 
-## 🧑‍💻 Tech Stack
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Flask (Python)
-- **Database:** PostgreSQL (for backend integration)
-- **AI Model:** CNN for image recognition
+## 🚀 How to Run  
 
-## 📜 License
-This project is for educational and demonstration purposes only.
+### 🔧 Setup Backend (Flask)  
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/your-username/Finding-Abductors-Using-AI.git
+   cd Finding-Abductors-Using-AI
+2.Create a virtual environment
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+3.Install dependencies
+pip install -r requirements.txt
+4.Run the server
+python app.py
+5.Open in browser
+http://127.0.0.1:5000
+
