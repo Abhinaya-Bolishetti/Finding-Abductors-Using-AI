@@ -1,0 +1,187 @@
+body {
+    font-family: 'Segoe UI', sans-serif; /* Modern and clean font */
+    margin: 0;
+    /* Dark background color, if image fails to load */
+    background-color: #0d1117; 
+    /* Your AI theme background image - make sure this path is correct */
+    /* This image should ideally be a dark, AI-themed abstract or network pattern */
+    background-image: url('ai-theme.png'); 
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-attachment: fixed; /* Makes the background image static when scrolling */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #e6edf3; /* Light text for readability on dark backgrounds */
+}
+
+header {
+    background: rgba(22, 27, 34, 0.9); /* Dark, slightly transparent header background */
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    z-index: 10; /* Ensure header is above other content */
+    border-bottom: 1px solid #30363d; /* Subtle dark border */
+}
+
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo {
+    height: 70px; /* Slightly larger logo */
+    width: 70px; /* Make it square for a perfect circle */
+    border-radius: 50%; /* Make the logo round */
+    object-fit: cover; /* Ensure the image covers the circular area without distortion */
+    /* Changed logo border color to match the main heading */
+    border: 3px solid #00e676; /* Bright Green border for logo */
+    /* Changed logo shadow color to match the main heading */
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.7); /* Stronger bright green glow */
+}
+
+header h1 {
+    font-size: 2.8em; /* Prominent heading size */
+    margin: 0.5em 0;
+    color: #00e676; /* Bright Green color for "FINDING ABDUCTORS PORTAL" */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Stronger shadow for contrast */
+}
+
+nav {
+    margin-top: 1em;
+}
+
+nav a {
+    color: #00c853; /* Slightly darker green for navigation links */
+    margin: 0 20px; /* Increased spacing between links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Smooth transition for hover effects */
+    font-size: 1.1em; /* Slightly larger navigation links */
+}
+
+nav a:hover {
+    color: #69f0ae; /* Lighter green on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+main {
+    padding: 3em 2em; /* More padding for content */
+    text-align: center;
+    background-color: rgba(13, 17, 23, 0.8); /* Dark semi-transparent background for main content */
+    margin: 20px auto; /* Center the main content with some top/bottom margin */
+    max-width: 1000px; /* Limit max width for better readability */
+    border-radius: 15px; /* Rounded corners for the main content area */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7); /* Stronger shadow for depth */
+    color: #e6edf3; /* Light text within main content */
+}
+
+.extra-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows images to wrap to the next line on smaller screens */
+    gap: 30px; /* Increased gap between images */
+    margin-top: 40px; /* More margin from the top of the main content */
+    margin-bottom: 40px; /* Add some space below the images */
+}
+
+.extra-images img {
+    width: 350px; /* Slightly larger images */
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    border: 1px solid #30363d; /* Dark border for definition */
+}
+
+.extra-images img:hover {
+    transform: scale(1.03); /* Slightly enlarge on hover */
+}
+
+/* Styles for forms, adjust as needed for other pages */
+.form-box {
+    background-color: #161b22; /* Dark form background */
+    padding: 30px;
+    max-width: 400px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3); /* Existing blue shadow */
+    color: #e6edf3; /* Light text in forms */
+    border: 1px solid #30363d;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00e676; /* Changed "Welcome" heading color to match main heading */
+}
+
+.form-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box input[type="file"],
+.form-box input[type="email"],
+.form-box textarea {
+    background-color: #0d1117; /* Very dark input fields */
+    border: 1px solid #30363d; /* Dark border */
+    color: #c9d1d9; /* Light gray text in inputs */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.form-box input:focus,
+.form-box textarea:focus {
+    outline: none;
+    border-color: #58a6ff; /* Blue highlight on focus */
+    box-shadow: 0 0 8px rgba(88, 166, 255, 0.6);
+}
+
+.form-box input[type="submit"],
+.form-box button {
+    background-color: #238636; /* Green submit button */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-box input[type="submit"]:hover,
+.form-box button:hover {
+    background-color: #2ea043; /* Lighter green on hover */
+}
+
+/* General button styling, you might want to use this for all buttons */
+button {
+    background-color: #238636;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #2ea043;
+}
+
+/* Link styling within forms (e.g., "Forgot password?") */
+.form-box a {
+    color: #79c0ff; /* Lighter blue links */
+    text-decoration: none;
+}
+
+.form-box a:hover {
+    text-decoration: underline;
+}

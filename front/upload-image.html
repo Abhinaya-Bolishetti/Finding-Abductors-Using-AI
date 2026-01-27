@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="main.js" defer></script>
+
+  <meta charset="UTF-8">
+  <title>Upload Suspicious Image</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="upload.js" defer></script>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Upload Suspicious Image</h2>
+    <form id="uploadForm" onsubmit="return validateForm(['imgInput', 'location'])">
+
+      <label>Select Image:</label>
+      <input id="imgInput" type="file" accept="image/*" onchange="previewImage('imgInput', 'imgPreview')" required>
+      <img id="imgPreview" style="display:none; width:100%; margin-top:1em; border-radius:10px;" />
+
+      <label>Location Found:</label>
+      <input id="location" type="text" placeholder="Eg: Near Central Park, Hyderabad" required>
+
+      <label>Description (optional):</label>
+      <textarea id="desc" placeholder="Describe the situation or appearance (optional)"></textarea>
+
+      <button type="submit">Upload</button>
+    </form>
+  </div>
+</body>
+</html>

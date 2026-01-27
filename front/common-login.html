@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="emailOrMobile">Email / Mobile</label>
+      <input id="emailOrMobile" type="text" required placeholder="Enter Email or Mobile">
+
+      <label for="password">Password</label>
+      <input id="password" type="password" required placeholder="Enter Password">
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="register.html">Register</a></p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const emailOrMobile = document.getElementById('emailOrMobile').value;
+      const password = document.getElementById('password').value;
+
+      const formData = new URLSearchParams();
+      formData.append('emailOrMobile', emailOrMobile);
+      formData.append('password', password);
+
+      const res = await fetch('http://localhost:5001/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString()
+      });
+
+      const text = await res.text();
+
+      if (res.ok) {
+        alert('Login successful!');
+        // redirect or open dashboard
+      } else {
+        alert(text);
+      }
+    });
+  </script>
+</body>
+</html>
