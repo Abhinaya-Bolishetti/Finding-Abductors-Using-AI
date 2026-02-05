@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+
+
+
+
+cd ~/abductor_detection_backend
+jupyter notebook
+
+from flask import Flask, request, jsonify
+import os
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "Missing Persons Backend API is running."
+
+@app.route('/upload', methods=['POST'])
+def upload_image():
+    if 'image' not in request.files:
+        return jsonify({'error': 'No image file provided'}), 400
+    
+    image = request.files['image']
+    filename = image.filename
+    save_path = os.path.join('uploads', filename)
+    os.makedirs('uploads', exist_ok=True)
+    image.save(save_path)
+    
+    # TODO: Add your CNN prediction code here using saved image
+    
+    return jsonify({'message': f'Image {filename} uploaded and processed.'}), 200
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5001, debug=True)
+

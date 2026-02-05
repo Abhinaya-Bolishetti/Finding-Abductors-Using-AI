@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finding Abductors Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo" />
+    </div>
+    <h1>FINDING ABDUCTORS PORTAL</h1>
+    <nav>
+      <a href="{{ url_for('main.register_page') }}">Login/Register User</a>
+      <a href="{{ url_for('main.login_page') }}">Login</a>
+      <a href="{{ url_for('main.register_case') }}">Register Case</a>
+      <a href="{{ url_for('main.upload_image') }}">Upload Suspicious Image</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <div class="form-box">
+        <h2>Welcome</h2>
+        <p>Use the navigation above to get started.</p>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

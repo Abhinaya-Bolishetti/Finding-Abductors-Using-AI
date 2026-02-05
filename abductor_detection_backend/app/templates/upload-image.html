@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upload Suspicious Image</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+  <!-- Load JS in correct order -->
+  <script src="script.js" defer></script>
+  <script src="main.js" defer></script>
+  <script src="upload.js" defer></script>
+
+</head>
+<body onload="setupImageUpload()">
+  <!-- ✅ Token check -->
+  <script>
+    const token = localStorage.getItem("access_token");
+    if (!token) {
+      alert("Please login first.");
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <div class="form-box">
+    <h2>Upload Suspicious Image</h2>
+
+    <form id="uploadForm" onsubmit="return uploadSuspiciousImage()">
+      <label>Select Image:</label>
+      <input id="imgInput" type="file" accept="image/*" onchange="previewImage('imgInput', 'imgPreview')" required />
+      <img id="imgPreview" style="display:none; width:100%; margin-top:1em; border-radius:10px;" />
+
+      <label>Location Found:</label>
+      <input id="location" type="text" placeholder="Eg: Near Central Park, Hyderabad" required />
+
+      <label>Description (optional):</label>
+      <textarea id="desc" placeholder="Describe the situation or appearance (optional)"></textarea>
+
+      <button type="submit">Upload</button>
+    </form>
+  </div>
+</body>
+</html>
