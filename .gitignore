@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual env
+venv/
+.env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model files (large binaries)
+*.keras
+*.h5
+*.pt
+
+# Datasets & uploads (should not be in repo)
+dataset/
+uploads/
+
+# Archives
+*.zip
+
+# Logs
+*.log
